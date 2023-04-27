@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import './LowerHeader.css'
+import './DropdownMenu.css';
 
 function LowerHeader() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);    
@@ -31,8 +32,15 @@ function LowerHeader() {
 
       
 
-
-
+     
+        const [isOpen1, setIsOpen1] = useState(false);
+      
+        function toggleMenu() {
+          console.log('toggleMenu called');
+          setIsOpen1(!isOpen1);
+          console.log('isOpen1:', isOpen1);
+        }
+        console.log('rendering');
  
    
   return (
@@ -41,19 +49,22 @@ function LowerHeader() {
         <header  class=" lowerHeader">
             <nav>
                 <ul>
-                <button class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-          {/* <div class="hello">
-            <div class="popup">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Query</a></li>
-            </ul>
-          </div>
-          </div> */}
-        
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+                <button className="menu-icon" onClick={toggleMenu}>
+                  <i className="fas fa-bars"></i>
+                </button>
+                {isOpen1 && (
+                  <div className="dropdown-menu1">
+                    <ul>
+                      <li><a href="#" className="dropdown-menu2">Home</a></li>
+                      <li><a href="#" className="dropdown-menu2">News</a></li>
+                      <li><a href="#" className="dropdown-menu2">Press</a></li>
+                      <li><a href="#" className="dropdown-menu2">Blog</a></li>
+                      <li><a href="#"className= 'dropdown-menu2'>Query</a></li>
+                    </ul>
+                  </div>
+                )}
 
 
       
@@ -105,7 +116,7 @@ function LowerHeader() {
       </div>
         
         <li class="dropdown">
-      <span class="dropdown-toggle gautam"  onclick="toggleDropdown()">Solutions</span>
+      <span class="dropdown-toggle gautam"  >Solutions</span>
       <span class="drop-down-icon">
                 <svg class="rotate-90" viewBox="0 0 30 48" version="1.1"  width="10" height="10" preserveAspectRatio >
                 <path d="M0 4.7c1.8-1.8 3.4-3.4 4.9-4.9 8 8 16.1 16 24.2 24 -8.1 8-16.1 16-24.2 24 -1.5-1.5-3.1-3.1-4.7-4.7C6.5 36.7 12.9 30.4 19.4 24 12.8 17.5 6.4 11.1 0 4.7z"></path>
