@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./sai_logo.png";
+import logo from "./Images/sai_logo.png";
 import'./UpperHeader.css'
 
 const UpperHeader = () => {
