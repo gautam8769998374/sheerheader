@@ -1,19 +1,14 @@
-import React from 'react'
-import UpperHeader from './Components/UpperHeader'
-import "./App.css"
-import LowerHeader from './Components/LowerHeader'
-import Body from './Components/Body'
-import Footer from './Components/Footer'
+import React, { Component } from 'react'
+import ContectUs from './Components/ContectUs'
 
-const App = () => {
+class App extends Component {
+  render() {
     return (
-        <div>
-           <UpperHeader/>
-           <LowerHeader/>
-           <Body/>
-           <Footer/>
-        </div>
+      <div>
+        <ContectUs/>
+      </div>
     )
+  }
 }
 
 export default App
